@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: homepage-eureka
+
+server:
+  port: 8000
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # 是否从Eureka Server中获取注册信息
+    fetch-registry: false
+    # 是否将自己注册到Eureka Server
+    register-with-eureka: false
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka
