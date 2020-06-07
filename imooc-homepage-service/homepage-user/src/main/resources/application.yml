@@ -1,11 +1,11 @@
 server:
-  port: 7001
+  port: 7000
   servlet:
-    context-path: /homepage-course
+    context-path: /homepage-user
 
 spring:
   application:
-    name: eureka-client-homepage-course
+    name: eureka-client-homepage-user
   jpa:
     show-sql: true
     hibernate:
@@ -28,3 +28,7 @@ eureka:
     service-url:
       # 如果是集群的话，用逗号隔开即可
       defaultZone: http://localhost:8000/eureka/
+
+feign:
+  hystrix:
+    enabled: true
