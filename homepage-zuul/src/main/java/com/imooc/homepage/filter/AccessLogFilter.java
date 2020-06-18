@@ -44,10 +44,12 @@ public class AccessLogFilter extends ZuulFilter {
 
         RequestContext ctx = RequestContext.getCurrentContext();
         Long startTime = (Long)ctx.get("startTime");
+        System.out.println("============================="+startTime);
         HttpServletRequest request = ctx.getRequest();
         String uri = request.getRequestURI();
         long duration = System.currentTimeMillis()-startTime;
-        log.info("uri: {}, duration: {}ms", uri, duration/1000);
+        System.out.println("============================="+duration);
+        log.info("uri: {}, duration: {}ms", uri, duration/1000.0);
         return null;
     }
 }
